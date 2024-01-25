@@ -367,10 +367,21 @@ def model1(name_testing_subject, training_data, training_states, testing_data, t
     # plt.title('Histogram of Unknown Predictions per Class')
     # plt.show()
 
+    labels_train_2 = [labels_numeric_MA[i] for i in indices_train_2]
+    labels_train_3 = [labels_numeric_MA[i] for i in indices_train_3]
+
+    # Step 4: Filter the testing data based on the indices
+    data_normalized_test_2 = data_normalized_test[indices_test_2]
+    data_normalized_test_3 = data_normalized_test[indices_test_3]
+    labels_test_2 = [labels_numeric_MA_test[i] for i in indices_test_2]
+    labels_test_3 = [labels_numeric_MA_test[i] for i in indices_test_3]
+
+    # print("Filtered data based on labels 2 and 3.")
+    # Step 1: Combine the training data for states 2 an
     return cm, unknown_counts
 
 
-def mod2(name_testing_subject, training_data, training_states, testing_data, testing_states, treshold_mod2, norm=False):
+def mod2(name_testing_subject, training_data, training_states, testing_data, testing_states, treshold_mod2, LEAVEONEOUT, norm=False):
     name = name_testing_subject
     
     if norm == True:
@@ -394,17 +405,6 @@ def mod2(name_testing_subject, training_data, training_states, testing_data, tes
     # Step 3: Filter the training data based on the indices
     data_normalized_train_2 = data_normalized[indices_train_2]
     data_normalized_train_3 = data_normalized[indices_train_3]
-    labels_train_2 = [labels_numeric_MA[i] for i in indices_train_2]
-    labels_train_3 = [labels_numeric_MA[i] for i in indices_train_3]
-
-    # Step 4: Filter the testing data based on the indices
-    data_normalized_test_2 = data_normalized_test[indices_test_2]
-    data_normalized_test_3 = data_normalized_test[indices_test_3]
-    labels_test_2 = [labels_numeric_MA_test[i] for i in indices_test_2]
-    labels_test_3 = [labels_numeric_MA_test[i] for i in indices_test_3]
-
-    # print("Filtered data based on labels 2 and 3.")
-    # Step 1: Combine the training data for states 2 and 3
     data_normalized_train_combined = np.concatenate((data_normalized_train_2, data_normalized_train_3), axis=0)
     labels_train_combined = labels_train_2 + labels_train_3
 
@@ -440,7 +440,10 @@ def mod2(name_testing_subject, training_data, training_states, testing_data, tes
     from keras.models import load_model
     epch = 10
     # Assuming "name" and "epoch" variables are defined elsewhere in your code.
-    model_path = f"models_MAstates/model_MAstates_{name}_{epch}.h5"
+    if not LEAVEONEOUT:
+        model_path = f"models_MAstates/model_MAstates_{name}_{epch}.h5"
+    else:
+        model_path = f"models_MAstates/model_MAstates_{name}_transflearning7subs_{epch}.h5"
 
     # Check if model file exists and load it; else, define and train the model
     if os.path.exists(model_path):
@@ -607,19 +610,16 @@ def mod2_onlypredict_and_time(name_testing_subject, testing_data, testing_states
 
     return y_pred, predictions, true_classes, data_normalized_test_combined, labels_test_combined, indices_test_combined
 
-def organize_datamodel2(testing_data, testing_states, df_model2_sub):
+def organize_datamodel2(testing_data, testing_states, df_model2_sub, indicesMA):
     
     data_normalized_test = normalize_data(testing_data)
     labels_numeric_MA_test = labels_to_numbersMA(testing_states)
 
-    # Step 2: Find the indices in the testing labels where the state == 2 or 3
-    indices_all = [idx for idx, i in enumerate(labels_numeric_MA_test) if i == 2 or i == 3]
-
     # Step 2: Combine the testing data for states 2 and 3
-    data_normalized_test = data_normalized_test[indices_all, :]
+    data_normalized_test = data_normalized_test[indicesMA, :]
 
     # Convert the lists to numpy arrays
-    labels_test_combined = np.array([labels_numeric_MA_test[i] for i in indices_all])
+    labels_test_combined = np.array([labels_numeric_MA_test[i] for i in indicesMA])
     
     # get correct order of indices
     time_indices = [df_model2_sub['time_index'].iloc[i] for i in range(data_normalized_test.shape[0])]
