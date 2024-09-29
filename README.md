@@ -9,9 +9,5 @@ For classification, check the example notebook located at `example_notebook/gene
 
 Make sure to follow the instructions in the notebooks to properly preprocess your data, train the models, and perform the classification and transition detection tasks.
 
-## Citations
-If you find this repository useful for your research, please consider citing our work:
-
-
 ## Issues
 For any questions or issues, feel free to raise an issue on this GitHub repository, and we will do our best! 
