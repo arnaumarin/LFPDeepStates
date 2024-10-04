@@ -5,7 +5,7 @@ This repository contains code for the detection and classification of anesthesia
 ## Overview
 The pipeline processes the data through a series of steps, including preprocessing, state classification, and transition detection, using a combination of supervised and self-supervised learning techniques. It achieves accuracy rates of up to 96% for specific states and averages over 85% across all states, with 74% accuracy for detecting transitions. The methodology employs a leave-one-out strategy for model training, ensuring broad applicability across subjects.
 
-![Pipeline Overview](images/pipeline.png)
+![Pipeline Overview](images/pipeline-1.png)
 
 ## Usage
 For classification, check the example notebook located at `example_notebook/general_notebook.ipynb`. For transition detection, refer to the notebook at `example_notebook/transition_notebook.ipynb`. For further understanding and visualization of the process during the Autoencoders phase, please check and follow the comments in the example notebooks located at `example_notebook/clusters_psd_notebook.ipynb` and `example_notebook/autoencoders_synthetic.ipynb`.
