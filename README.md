@@ -14,7 +14,21 @@ Make sure to follow the instructions in the notebooks to properly preprocess you
 
 ## Citations
 If you find this repository useful for your research, please consider citing our work:
-(coming soon)
+
+**Arnau Marin-Llobet, Arnau Manasanch, Leonardo Dalla Porta, and Maria V. Sanchez-Vives.**  
+*"Deep neural networks for detection and classification of brain states."*  
+*Journal of Sleep Research, vol. 33, Wiley, 2024.*
+
+```bibtex
+@article{marin2024deep,
+  title={Deep neural networks for detection and classification of brain states},
+  author={Marin-Llobet, Arnau and Manasanch, Arnau and Dalla Porta, Leonardo and Sanchez-Vives, Maria V},
+  journal={Journal of Sleep Research},
+  volume={33},
+  year={2024},
+  publisher={Wiley}
+}
+```
 
 ## Issues
 For any questions or issues, feel free to raise an issue on this GitHub repository, and we will do our best! 
