@@ -7,6 +7,8 @@ The pipeline processes the data through a series of steps, including preprocessi
 
 ![Pipeline Overview](images/pipeline-1.png)
 
+The demonstration dataset is publicly available at https://doi.org/10.5281/zenodo.14990181 Other data are available from the corresponding author on reasonable request.
+
 ## Usage
 For classification, check the example notebook located at `example_notebook/general_notebook.ipynb`. For transition detection, refer to the notebook at `example_notebook/transition_notebook.ipynb`. For further understanding and visualization of the process during the Autoencoders phase, please check and follow the comments in the example notebooks located at `example_notebook/clusters_psd_notebook.ipynb` and `example_notebook/autoencoders_synthetic.ipynb`.
 
