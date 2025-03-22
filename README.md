@@ -1,3 +1,5 @@
+[![DOI](https://sandbox.zenodo.org/badge/694391403.svg)](https://handle.stage.datacite.org/10.5072/zenodo.186019)
+
 # Neural models for anesthesia stage transition detection and classification
 
 This repository contains code for the detection and classification of anesthesia-induced brain state transitions, including wakefulness, slow oscillations, and microarousals. We leverage a dual-model Convolutional Neural Network (CNN) and a self-supervised autoencoder-based multimodal clustering algorithm to achieve accurate brain state classification and transition detection based on in vivo LFP recordings from rats.
