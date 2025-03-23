@@ -1,4 +1,4 @@
-[![DOI](https://sandbox.zenodo.org/badge/694391403.svg)](https://handle.stage.datacite.org/10.5072/zenodo.186019)
+[![DOI](https://zenodo.org/badge/694391403.svg)](https://doi.org/10.5281/zenodo.15066751)
 
 # Neural models for anesthesia stage transition detection and classification
 
