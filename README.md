@@ -16,18 +16,18 @@ For classification, check the example notebook located at `example_notebook/gene
 
 Make sure to follow the instructions in the notebooks to properly preprocess your data, train the models, and perform the classification and transition detection tasks.
 
-## Citations
-If you find this repository useful for your research, please consider citing our work:
+## Citation
 
-**Arnau Marin-Llobet, Arnau Manasanch, Leonardo Dalla Porta, Melody Torao-Angosto, and Maria V. Sanchez-Vives.**  
-*"Neural models for detection and classification of brain states and transitions"*  
-*Communications Biology, in press. 2025.*
+If you find this repository useful for your research, please consider citing the following works:
 
-and/or 
+**Arnau Marin-Llobet, Arnau Manasanch, Leonardo Dalla Porta, Melody Torao-Angosto, and Maria V. Sanchez-Vives**  
+*Neural models for detection and classification of brain states and transitions*  
+**Communications Biology**, 8, 599 (2025).  
+[https://doi.org/10.1038/s42003-025-07991-3](https://doi.org/10.1038/s42003-025-07991-3)
 
-**Arnau Marin-Llobet, Arnau Manasanch, Leonardo Dalla Porta, and Maria V. Sanchez-Vives.**  
-*"Deep neural networks for detection and classification of brain states"*  
-*Journal of Sleep Research, vol. 33, Wiley, 2024*
+**Arnau Marin-Llobet, Arnau Manasanch, Leonardo Dalla Porta, and Maria V. Sanchez-Vives**  
+*Deep neural networks for detection and classification of brain states*  
+**Journal of Sleep Research**, Vol. 33, Wiley (2024)
 
 
 ## Issues
